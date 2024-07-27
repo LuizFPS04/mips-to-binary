@@ -1,0 +1,39 @@
+# Node modules
+node_modules/
+
+# Compiled JavaScript files
+dist/
+build/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Log files
+*.log
+
+# Environment variables
+.env
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE/editor specific files
+.vscode/
+.idea/
+
+# Coverage reports
+coverage/
+
+# Build artifacts
+*.tgz
+*.gz
+*.zip
+
+# Miscellaneous
+*.tmp
+*.swp
+*.swo
+
+# Yarn v2+ (Berry) specific files
+.pnp.*
