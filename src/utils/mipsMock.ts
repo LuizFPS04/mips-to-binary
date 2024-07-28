@@ -4,282 +4,610 @@ export const instructions: { [key: string]: InstructionMips } = {
     lb: {
         mnemonic: "lb",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "100000",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     lh: {
         mnemonic: "lh",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "100001",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     lwl: {
         mnemonic: "lwl",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "100010",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     lw: {
         mnemonic: "lw",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "100011",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     lbu: {
         mnemonic: "lbu",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "100100",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     lhu: {
         mnemonic: "lhu",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "100101",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     lwr: {
         mnemonic: "lwr",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "100110",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     sb: {
         mnemonic: "sb",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "101000",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     sh: {
         mnemonic: "sh",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "101001",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     swl: {
         mnemonic: "swl",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "101010",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     sw: {
         mnemonic: "sw",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "101011",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     swr: {
         mnemonic: "swr",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "101110",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     add: {
         mnemonic: "add",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     addu: {
         mnemonic: "addu",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     sub: {
         mnemonic: "sub",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     subu: {
         mnemonic: "subu",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     and: {
         mnemonic: "and",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     or: {
         mnemonic: "or",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     xor: {
         mnemonic: "xor",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     nor: {
         mnemonic: "nor",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     slt: {
         mnemonic: "slt",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     sltu: {
         mnemonic: "sltu",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     addi: {
         mnemonic: "addi",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "001000",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     addiu: {
         mnemonic: "addiu",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "001001",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     slti: {
         mnemonic: "slti",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "001010",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     sltiu: {
         mnemonic: "sltiu",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "001011",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     andi: {
         mnemonic: "andi",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "001100",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     ori: {
         mnemonic: "ori",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "001101",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     xori: {
         mnemonic: "xori",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "001110",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     lui: {
         mnemonic: "lui",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "001111",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     sll: {
         mnemonic: "sll",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     srl: {
         mnemonic: "srl",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     sra: {
         mnemonic: "sra",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     sllv: {
         mnemonic: "sllv",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     srlv: {
         mnemonic: "srlv",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     srav: {
         mnemonic: "srav",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     mfhi: {
         mnemonic: "mfhi",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     mthi: {
         mnemonic: "mthi",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     mflo: {
         mnemonic: "mflo",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     mtlo: {
         mnemonic: "mtlo",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     mult: {
         mnemonic: "mult",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     multu: {
         mnemonic: "multu",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     div: {
         mnemonic: "div",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     divu: {
         mnemonic: "divu",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     jr: {
         mnemonic: "jr",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     jalr: {
         mnemonic: "jalr",
         format: "R",
-        encoding: null
+        encoding: {
+            opCode: "000000",
+            rs: 5,
+            rt: 5,
+            rd: 5,
+            shamt: "00000",
+            func: 6
+        }
     },
     bltz: {
         mnemonic: "bltz",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "001000",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     bgez: {
         mnemonic: "bgez",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "001000",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     bltzal: {
         mnemonic: "bltzal",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "001000",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     bgezal: {
         mnemonic: "bgezal",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "001000",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     j: {
         mnemonic: "j",
         format: "J",
-        encoding: null
+        encoding: {
+            opCode: "000010",
+            immediate: 26
+        }
     },
     jal: {
         mnemonic: "jal",
-        format: "R",
-        encoding: null
+        format: "J",
+        encoding: {
+            opCode: "000011",
+            immediate: 26
+        }
     },
     beq: {
         mnemonic: "beq",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "000100",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     bne: {
         mnemonic: "bne",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "000101",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     blez: {
         mnemonic: "blez",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "000110",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     },
     bgtz: {
         mnemonic: "bgtz",
         format: "I",
-        encoding: null
+        encoding: {
+            opCode: "000111",
+            rs: 5,
+            rt: 5,
+            immediate: 16
+        }
     }
 };
 
@@ -293,7 +621,7 @@ export const registers: TRegisters = {
     $a2: "00110",
     $a3: "00111",
     $t0: "01000",
-    $t1: "01009",
+    $t1: "01001",
     $t2: "01010",
     $t3: "01011",
     $t4: "01100",

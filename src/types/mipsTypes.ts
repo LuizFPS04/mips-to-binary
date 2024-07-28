@@ -1,17 +1,17 @@
 type TEncoding = {
     opCode: string,
-    rs: string | null,
-    rt: string | null,
-    rd: string | null,
-    shamt: string | null,
-    func: string | null,
-    immediate: string | null,
+    rs?: number,
+    rt?: number,
+    rd?: number,
+    shamt?: string,
+    func?: number,
+    immediate?: number,
 }
 
 export interface InstructionMips {
     mnemonic: string,
     format: 'R' | 'I' | 'J',
-    encoding:  TEncoding | null
+    encoding: TEncoding
 }
 
 export type TRegisters = {
@@ -48,3 +48,5 @@ export type TRegisters = {
     $s8: string,
     $ra: string
 }
+
+export type RegisterKeys = keyof TRegisters;
