@@ -12,8 +12,7 @@ Código e dependências:
 ## Rodar
 Existem algumas maneiras:
 
-Você pode rodar com: ```npm run build``` e depois com ```npm start```<br>
-Ou com:  ```npm run dev```
+Você pode rodar com: ```npm run dev```
 
 ## Pastas
 
