@@ -366,7 +366,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: "000011"
+            func: "000100"
         }
     },
     srlv: {

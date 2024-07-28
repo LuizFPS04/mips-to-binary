@@ -1,8 +1,9 @@
-import { RegisterKeys } from "../types/mipsTypes";
+import { RegisterKeys, Traduction } from "../types/mipsTypes";
 import { padBinary } from "../utils/completeString";
 import { registers } from "../utils/mipsMock";
+import { convertToBinary } from "../utils/numbertToBinary";
 
-export function processIFormat(commands: string[], traduction: any, instruction: any) {
+export function processIFormat(commands: string[], traduction: Traduction, instruction: any) {
     let lastConst = false;
     let bits: number;
 
@@ -10,7 +11,11 @@ export function processIFormat(commands: string[], traduction: any, instruction:
         if (regCommand in registers) {
             const register: RegisterKeys = regCommand as RegisterKeys;
 
-            if (instruction.mnemonic === "bltz" || instruction.mnemonic === "blez" || instruction.mnemonic === "bgtz") {
+            if (
+                instruction.mnemonic === "bltz" ||
+                instruction.mnemonic === "blez" ||
+                instruction.mnemonic === "bgtz"
+            ) {
                 traduction['rs'] = registers[register];
                 traduction['rt'] = "00000";
             } else if (instruction.mnemonic === "bgez") {
@@ -58,16 +63,8 @@ export function processIFormat(commands: string[], traduction: any, instruction:
         } else {
             bits = instruction.encoding.immediate!;
 
-            let regCommandBinary: string = "";
-            let regCommandInt = parseInt(regCommand);
+            convertToBinary(bits, "I", regCommand, traduction);
 
-            if (regCommandInt >= 0) {
-                regCommandBinary = regCommandInt.toString(2);
-                traduction['immediate'] = padBinary(regCommandBinary, bits);
-            } else {
-                regCommandBinary = (regCommandInt >>> 0).toString(2).slice(-bits);
-                traduction['immediate'] = regCommandBinary;
-            }
             lastConst = true;
         }
     }
@@ -75,7 +72,7 @@ export function processIFormat(commands: string[], traduction: any, instruction:
     return traduction;
 }
 
-export function processRFormat(commands: string[], traduction: any, instruction: any) {
+export function processRFormat(commands: string[], traduction: Traduction, instruction: any) {
 
     traduction['shamt'] = instruction.encoding?.shamt;
     traduction['func'] = instruction.encoding?.func;
@@ -85,6 +82,61 @@ export function processRFormat(commands: string[], traduction: any, instruction:
         if (regCommand in registers) {
             const register: RegisterKeys = regCommand as RegisterKeys;
 
+            if (
+                instruction.mnemonic === "sll" ||
+                instruction.mnemonic === "srl" ||
+                instruction.mnemonic === "sra"
+            ) {
+                if (!traduction.rs) {
+                    traduction['rs'] = registers['$zero'];
+                } else if (!traduction.rd) {
+                    traduction['rd'] = registers[register];
+                } else if (!traduction.rt) {
+                    traduction['rt'] = registers[register];
+                }
+            } else if (
+                instruction.mnemonic === "sllv" ||
+                instruction.mnemonic === "srlv" ||
+                instruction.mnemonic === "srav"
+            ) {
+                if (!traduction.rd && !traduction.rt) {
+                    traduction['rd'] = registers[register];
+                    traduction['rt'] = registers[register];
+                } else {
+                    traduction['rs'] = registers[register];
+                }
+            } else if (
+                instruction.mnemonic === "mthi" ||
+                instruction.mnemonic === "mtlo" ||
+                instruction.mnemonic === "jr"
+            ) { 
+                if (!traduction.rs) {
+                    traduction['rs'] = registers[register];
+                } else if (!traduction.rt) {
+                    traduction['rt'] = registers['$zero'];
+                } else if (!traduction.rd) {
+                    traduction['rd'] = registers['$zero'];
+                }
+            } else if (
+                instruction.mnemonic === "mfhi" ||
+                instruction.mnemonic === "mflo"
+            ) { 
+                if (!traduction.rs) {
+                    traduction['rs'] = registers['$zero'];
+                } else if (!traduction.rt) {
+                    traduction['rt'] = registers['$zero'];
+                } else if (!traduction.rd) {
+                    traduction['rd'] = registers[register];
+                }
+            } else if (instruction.mnemonic === "jalr") { 
+                if (!traduction.rt) {
+                    traduction['rt'] = registers['$zero'];
+                } else if (!traduction.rd) {
+                    traduction['rd'] = registers[register];
+                } else if (!traduction.rs) {
+                    traduction['rs'] = registers[register];
+                }
+            }
             if (!traduction.rd) {
                 bits = instruction.encoding.rd!;
                 traduction['rd'] = registers[register];
@@ -95,13 +147,21 @@ export function processRFormat(commands: string[], traduction: any, instruction:
                 bits = instruction.encoding.rt!;
                 traduction['rt'] = registers[register];
             }
+        } else {
+            if (
+                instruction.mnemonic === "sll" ||
+                instruction.mnemonic === "srl" ||
+                instruction.mnemonic === "sra"
+            ) {
+                convertToBinary(5, "R", regCommand, traduction);
+            }
         }
     }
 
     return traduction;
 }
 
-export function processJFormat(commands: string[], traduction: any, instruction: any) {
+export function processJFormat(commands: string[], traduction: Traduction, instruction: any) {
 
     let bits: number;
 
@@ -112,16 +172,7 @@ export function processJFormat(commands: string[], traduction: any, instruction:
         } else {
             bits = instruction.encoding.immediate!;
 
-            let regCommandBinary: string = "";
-            let regCommandInt = parseInt(regCommand);
-
-            if (regCommandInt >= 0) {
-                regCommandBinary = regCommandInt.toString(2);
-                traduction['immediate'] = padBinary(regCommandBinary, bits);
-            } else {
-                regCommandBinary = (regCommandInt >>> 0).toString(2).slice(-bits);
-                traduction['immediate'] = regCommandBinary;
-            }
+            convertToBinary(bits, "J", regCommand, traduction);
         }
     }
 
