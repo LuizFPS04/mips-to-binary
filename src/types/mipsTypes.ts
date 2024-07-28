@@ -4,7 +4,7 @@ type TEncoding = {
     rt?: number,
     rd?: number,
     shamt?: string,
-    func?: number,
+    func?: string,
     immediate?: number,
 }
 
@@ -47,6 +47,10 @@ export type TRegisters = {
     $sp: string,
     $s8: string,
     $ra: string
+}
+
+export interface Traduction {
+    [key: string]: any;
 }
 
 export type RegisterKeys = keyof TRegisters;

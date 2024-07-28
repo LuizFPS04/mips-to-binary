@@ -130,7 +130,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "100000"
         }
     },
     addu: {
@@ -142,7 +142,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "100001"
         }
     },
     sub: {
@@ -154,7 +154,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "100010"
         }
     },
     subu: {
@@ -166,7 +166,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "100011"
         }
     },
     and: {
@@ -178,7 +178,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "100100"
         }
     },
     or: {
@@ -190,7 +190,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "100101"
         }
     },
     xor: {
@@ -202,7 +202,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "100110"
         }
     },
     nor: {
@@ -214,7 +214,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "100111"
         }
     },
     slt: {
@@ -226,7 +226,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "101010"
         }
     },
     sltu: {
@@ -238,7 +238,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "101011"
         }
     },
     addi: {
@@ -330,7 +330,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "000000"
         }
     },
     srl: {
@@ -342,7 +342,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "000010"
         }
     },
     sra: {
@@ -354,7 +354,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "000011"
         }
     },
     sllv: {
@@ -366,7 +366,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "000011"
         }
     },
     srlv: {
@@ -378,7 +378,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "000110"
         }
     },
     srav: {
@@ -390,7 +390,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "000111"
         }
     },
     mfhi: {
@@ -402,7 +402,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "010000"
         }
     },
     mthi: {
@@ -414,7 +414,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "010001"
         }
     },
     mflo: {
@@ -426,7 +426,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "010010"
         }
     },
     mtlo: {
@@ -438,7 +438,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "010011"
         }
     },
     mult: {
@@ -450,7 +450,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "011000"
         }
     },
     multu: {
@@ -462,7 +462,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "011001"
         }
     },
     div: {
@@ -474,7 +474,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "011010"
         }
     },
     divu: {
@@ -486,7 +486,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "011011"
         }
     },
     jr: {
@@ -498,7 +498,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "001000"
         }
     },
     jalr: {
@@ -510,7 +510,7 @@ export const instructions: { [key: string]: InstructionMips } = {
             rt: 5,
             rd: 5,
             shamt: "00000",
-            func: 6
+            func: "001001"
         }
     },
     bltz: {
@@ -537,7 +537,7 @@ export const instructions: { [key: string]: InstructionMips } = {
         mnemonic: "bltzal",
         format: "I",
         encoding: {
-            opCode: "001000",
+            opCode: "000001",
             rs: 5,
             rt: 5,
             immediate: 16

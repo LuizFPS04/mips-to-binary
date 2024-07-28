@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES6",                          // Especifica a versão do JavaScript para a qual o TypeScript será compilado
+    "target": "es2017",                          // Especifica a versão do JavaScript para a qual o TypeScript será compilado
     "module": "commonjs",                     // Especifica o sistema de módulo a ser usado
     "strict": true,                           // Habilita todas as verificações de tipo estritas
     "esModuleInterop": true,                  // Garante compatibilidade com módulos ES
