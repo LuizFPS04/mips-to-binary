@@ -1,8 +1,5 @@
 # mips-to-binary
 
-# schedule-notification
-
-
 ## Instalação
 
 Instale:
