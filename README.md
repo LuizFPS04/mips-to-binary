@@ -1,5 +1,5 @@
 # mips-to-binary
-
+Integrantes - Luiz Felipe Sena e Luan Alves
 ## Instalação
 
 Instale:
@@ -10,7 +10,6 @@ Código e dependências:
 - Instale os módulos: `npm install`
 
 ## Rodar
-Existem algumas maneiras:
 
 Você pode rodar com: ```npm run dev```
 
